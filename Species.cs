@@ -1,6 +1,14 @@
 ﻿public class Species
 {
-    public string name { get; set; }
-    public string classification { get; set; }
-    public string language { get; set; }
+    public string Name { get; set; }
+    public string Classification { get; set; }
+    public string Language { get; set; }
+
+    // to initialize a species
+    public Species(string name, string classification, string language)
+    {
+        Name = name;
+        Classification = classification;
+        Language = language;
+    }
 }

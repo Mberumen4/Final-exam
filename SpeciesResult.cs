@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace StarWarsExplorer
 {
+    // Class to represent the result of the species API call
     public class SpeciesResult
     {
-        public List<Species> results { get; set; }  // List of species
-        public string next { get; set; }            // URL for the next page of species (if applicable)
-    }
+        // List of species objects that are returned in the API response
+        [JsonProperty("results")]
+        public List<Species> Results { get; set; }
 
+        // URL to the next page of species data, if available (for paginated results)
+        [JsonProperty("next")]
+        public string Next { get; set; }
+    }
 }

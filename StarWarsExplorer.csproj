@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiHelper.cs" />
+    <Compile Include="CharacterDetails.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

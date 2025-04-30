@@ -1,8 +1,18 @@
 ﻿public class Planet
 {
-    public string name { get; set; }
-    public string climate { get; set; }
-    public string gravity { get; set; }
-    public string terrain { get; set; }
-    public string population { get; set; }
+    public string Name { get; set; }
+    public string Climate { get; set; }
+    public string Gravity { get; set; }
+    public string Terrain { get; set; }
+    public string Population { get; set; }
+
+    // to initialize a planet
+    public Planet(string name, string climate, string gravity, string terrain, string population)
+    {
+        Name = name;
+        Climate = climate;
+        Gravity = gravity;
+        Terrain = terrain;
+        Population = population;
+    }
 }

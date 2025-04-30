@@ -44,18 +44,20 @@
             this.lstStarships = new System.Windows.Forms.ListBox();
             this.lstSpecies = new System.Windows.Forms.ListBox();
             this.btnGetSpecies = new System.Windows.Forms.Button();
+            this.lblSpecies = new System.Windows.Forms.Label();
+            this.lblHomeworld = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPlanetId
             // 
-            this.txtPlanetId.Location = new System.Drawing.Point(76, 78);
+            this.txtPlanetId.Location = new System.Drawing.Point(30, 77);
             this.txtPlanetId.Name = "txtPlanetId";
             this.txtPlanetId.Size = new System.Drawing.Size(100, 20);
             this.txtPlanetId.TabIndex = 0;
             // 
             // btnGetPlanet
             // 
-            this.btnGetPlanet.Location = new System.Drawing.Point(226, 78);
+            this.btnGetPlanet.Location = new System.Drawing.Point(136, 77);
             this.btnGetPlanet.Name = "btnGetPlanet";
             this.btnGetPlanet.Size = new System.Drawing.Size(75, 23);
             this.btnGetPlanet.TabIndex = 1;
@@ -66,83 +68,83 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(76, 128);
+            this.lblName.Location = new System.Drawing.Point(27, 131);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "label1";
+            this.lblName.Text = "Name";
             // 
             // lblClimate
             // 
             this.lblClimate.AutoSize = true;
-            this.lblClimate.Location = new System.Drawing.Point(76, 162);
+            this.lblClimate.Location = new System.Drawing.Point(27, 165);
             this.lblClimate.Name = "lblClimate";
-            this.lblClimate.Size = new System.Drawing.Size(35, 13);
+            this.lblClimate.Size = new System.Drawing.Size(41, 13);
             this.lblClimate.TabIndex = 3;
-            this.lblClimate.Text = "label2";
+            this.lblClimate.Text = "Climate";
             // 
             // lblGravity
             // 
             this.lblGravity.AutoSize = true;
-            this.lblGravity.Location = new System.Drawing.Point(79, 194);
+            this.lblGravity.Location = new System.Drawing.Point(27, 197);
             this.lblGravity.Name = "lblGravity";
-            this.lblGravity.Size = new System.Drawing.Size(35, 13);
+            this.lblGravity.Size = new System.Drawing.Size(40, 13);
             this.lblGravity.TabIndex = 4;
-            this.lblGravity.Text = "label3";
+            this.lblGravity.Text = "Gravity";
             // 
             // lblTerrain
             // 
             this.lblTerrain.AutoSize = true;
-            this.lblTerrain.Location = new System.Drawing.Point(79, 225);
+            this.lblTerrain.Location = new System.Drawing.Point(27, 228);
             this.lblTerrain.Name = "lblTerrain";
-            this.lblTerrain.Size = new System.Drawing.Size(35, 13);
+            this.lblTerrain.Size = new System.Drawing.Size(40, 13);
             this.lblTerrain.TabIndex = 5;
-            this.lblTerrain.Text = "label4";
+            this.lblTerrain.Text = "Terrain";
             // 
             // lblPopulation
             // 
             this.lblPopulation.AutoSize = true;
-            this.lblPopulation.Location = new System.Drawing.Point(76, 251);
+            this.lblPopulation.Location = new System.Drawing.Point(27, 260);
             this.lblPopulation.Name = "lblPopulation";
-            this.lblPopulation.Size = new System.Drawing.Size(35, 13);
+            this.lblPopulation.Size = new System.Drawing.Size(57, 13);
             this.lblPopulation.TabIndex = 6;
-            this.lblPopulation.Text = "label5";
+            this.lblPopulation.Text = "Population";
             // 
             // lblBirthYear
             // 
             this.lblBirthYear.AutoSize = true;
-            this.lblBirthYear.Location = new System.Drawing.Point(443, 228);
+            this.lblBirthYear.Location = new System.Drawing.Point(437, 228);
             this.lblBirthYear.Name = "lblBirthYear";
-            this.lblBirthYear.Size = new System.Drawing.Size(35, 13);
+            this.lblBirthYear.Size = new System.Drawing.Size(53, 13);
             this.lblBirthYear.TabIndex = 12;
-            this.lblBirthYear.Text = "label4";
+            this.lblBirthYear.Text = "Birth Year";
             // 
             // lblMass
             // 
             this.lblMass.AutoSize = true;
-            this.lblMass.Location = new System.Drawing.Point(443, 197);
+            this.lblMass.Location = new System.Drawing.Point(437, 197);
             this.lblMass.Name = "lblMass";
-            this.lblMass.Size = new System.Drawing.Size(35, 13);
+            this.lblMass.Size = new System.Drawing.Size(32, 13);
             this.lblMass.TabIndex = 11;
-            this.lblMass.Text = "label3";
+            this.lblMass.Text = "Mass";
             // 
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(440, 165);
+            this.lblHeight.Location = new System.Drawing.Point(437, 165);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(35, 13);
+            this.lblHeight.Size = new System.Drawing.Size(38, 13);
             this.lblHeight.TabIndex = 10;
-            this.lblHeight.Text = "label2";
+            this.lblHeight.Text = "Height";
             // 
             // lblPersonName
             // 
             this.lblPersonName.AutoSize = true;
-            this.lblPersonName.Location = new System.Drawing.Point(440, 131);
+            this.lblPersonName.Location = new System.Drawing.Point(437, 131);
             this.lblPersonName.Name = "lblPersonName";
             this.lblPersonName.Size = new System.Drawing.Size(35, 13);
             this.lblPersonName.TabIndex = 9;
-            this.lblPersonName.Text = "label1";
+            this.lblPersonName.Text = "Name";
             // 
             // btnGetPerson
             // 
@@ -172,15 +174,15 @@
             // lstSpecies
             // 
             this.lstSpecies.FormattingEnabled = true;
-            this.lstSpecies.Location = new System.Drawing.Point(590, 303);
+            this.lstSpecies.Location = new System.Drawing.Point(235, 131);
             this.lstSpecies.Name = "lstSpecies";
-            this.lstSpecies.Size = new System.Drawing.Size(120, 95);
+            this.lstSpecies.Size = new System.Drawing.Size(196, 108);
             this.lstSpecies.TabIndex = 14;
             this.lstSpecies.SelectedIndexChanged += new System.EventHandler(this.lstSpecies_SelectedIndexChanged);
             // 
             // btnGetSpecies
             // 
-            this.btnGetSpecies.Location = new System.Drawing.Point(590, 264);
+            this.btnGetSpecies.Location = new System.Drawing.Point(235, 79);
             this.btnGetSpecies.Name = "btnGetSpecies";
             this.btnGetSpecies.Size = new System.Drawing.Size(75, 23);
             this.btnGetSpecies.TabIndex = 15;
@@ -188,11 +190,31 @@
             this.btnGetSpecies.UseVisualStyleBackColor = true;
             this.btnGetSpecies.Click += new System.EventHandler(this.btnGetSpecies_Click);
             // 
+            // lblSpecies
+            // 
+            this.lblSpecies.AutoSize = true;
+            this.lblSpecies.Location = new System.Drawing.Point(437, 260);
+            this.lblSpecies.Name = "lblSpecies";
+            this.lblSpecies.Size = new System.Drawing.Size(45, 13);
+            this.lblSpecies.TabIndex = 16;
+            this.lblSpecies.Text = "Species";
+            // 
+            // lblHomeworld
+            // 
+            this.lblHomeworld.AutoSize = true;
+            this.lblHomeworld.Location = new System.Drawing.Point(437, 288);
+            this.lblHomeworld.Name = "lblHomeworld";
+            this.lblHomeworld.Size = new System.Drawing.Size(60, 13);
+            this.lblHomeworld.TabIndex = 17;
+            this.lblHomeworld.Text = "Homeworld";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblHomeworld);
+            this.Controls.Add(this.lblSpecies);
             this.Controls.Add(this.btnGetSpecies);
             this.Controls.Add(this.lstSpecies);
             this.Controls.Add(this.lstStarships);
@@ -234,6 +256,8 @@
         private System.Windows.Forms.ListBox lstStarships;
         private System.Windows.Forms.ListBox lstSpecies;
         private System.Windows.Forms.Button btnGetSpecies;
+        private System.Windows.Forms.Label lblSpecies;
+        private System.Windows.Forms.Label lblHomeworld;
     }
 }
 
