@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace StarWarsExplorer
 {
@@ -56,7 +57,7 @@ namespace StarWarsExplorer
             try
             {
                 // Get the input from the user
-                string searchInput = txtPersonId.Text.Trim(); // You can rename txtPersonId to txtPersonSearchInput for clarity
+                string searchInput = txtPersonId.Text.Trim();
 
                 // Check if the input is empty
                 if (string.IsNullOrEmpty(searchInput))
@@ -76,27 +77,26 @@ namespace StarWarsExplorer
                 }
                 else
                 {
-                    // Otherwise, search by name
-                    url = $"https://swapi.py4e.com/api/people/?search={searchInput}";
+                    // Otherwise, search by name (search query for exact or partial match)
+                    string encodedName = Uri.EscapeDataString(searchInput); // URL-encode the name
+                    url = $"https://swapi.py4e.com/api/people/?search={encodedName}";
                 }
 
-                // Fetch the data
+                // Fetch the data from the API
                 var searchResult = await ApiHelper.GetDataAsync<PersonResults>(url);
 
-                // Handle the case where no results were found for name-based search
-                if (string.IsNullOrEmpty(url) || (url.Contains("people/") && searchResult == null))
+                // Check if the result contains any people
+                if (searchResult?.Results?.Count == 0)
                 {
-                    MessageBox.Show("No character found with that name or ID.");
+                    MessageBox.Show("No character found with that name.");
                     return;
                 }
 
-                // For ID-based search, check if we get a result directly (it won't be in Results[] array)
                 var person = searchResult?.Results?.FirstOrDefault();
 
                 if (person == null)
                 {
-                    // If person is null, handle no result
-                    MessageBox.Show("No character found with that ID.");
+                    MessageBox.Show("No character found with that name.");
                     return;
                 }
 
@@ -134,31 +134,21 @@ namespace StarWarsExplorer
                         homeworldName = homeworld.Name;
                 }
 
-                // Create object polymorphically
-                ApiEntity character = new CharacterDetails(
-                    person.Name,
-                    person.Height,
-                    person.Mass,
-                    person.BirthYear,
-                    starshipNames,
-                    speciesNames,
-                    homeworldName
-                );
-
-                var cd = character as CharacterDetails;
+                // Create the CharacterDetails object using the new constructor
+                CharacterDetails character = new CharacterDetails(person, starshipNames, speciesNames, homeworldName);
 
                 // Update the UI with the fetched data
-                lblPersonName.Text = $"Name: {cd.Name}";
-                lblHeight.Text = $"Height: {cd.Height}";
-                lblMass.Text = $"Mass: {cd.Mass}";
-                lblBirthYear.Text = $"Birth Year: {cd.BirthYear}";
-                lblSpecies.Text = $"Species: {string.Join(", ", cd.Species)}";
-                lblHomeworld.Text = $"Homeworld: {cd.Homeworld}";
+                lblPersonName.Text = $"Name: {character.Name}";
+                lblHeight.Text = $"Height: {character.Height}";
+                lblMass.Text = $"Mass: {character.Mass}";
+                lblBirthYear.Text = $"Birth Year: {character.BirthYear}";
+                lblSpecies.Text = $"Species: {string.Join(", ", character.Species)}";
+                lblHomeworld.Text = $"Homeworld: {character.Homeworld}";
 
                 lstStarships.Items.Clear();
-                if (cd.Starships.Count > 0)
+                if (character.Starships.Count > 0)
                 {
-                    foreach (var ship in cd.Starships)
+                    foreach (var ship in character.Starships)
                         lstStarships.Items.Add(ship);
                 }
                 else
@@ -168,14 +158,17 @@ namespace StarWarsExplorer
 
                 MessageBox.Show(character.DisplayInfo(), "Character Summary");
 
-                // Store the person object temporarily for later use
-                this.currentPerson = cd;
+                // Store the character object temporarily for later use
+                this.currentPerson = character;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error fetching character: " + ex.Message);
             }
         }
+
+        
+
 
 
 

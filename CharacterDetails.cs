@@ -9,9 +9,8 @@ namespace StarWarsExplorer
     }
 
     // CharacterDetails now inherits from ApiEntity
-    public class CharacterDetails : ApiEntity
+    public class CharacterDetails
     {
-        // Properties with getters and setters
         public string Name { get; set; }
         public string Height { get; set; }
         public string Mass { get; set; }
@@ -20,23 +19,23 @@ namespace StarWarsExplorer
         public List<string> Species { get; set; }
         public string Homeworld { get; set; }
 
-        // Constructor to initialize all properties
-        public CharacterDetails(string name, string height, string mass, string birthYear, List<string> starships, List<string> species, string homeworld)
+        // Constructor that takes a Person object and maps the properties
+        public CharacterDetails(Person person, List<string> starships, List<string> species, string homeworld)
         {
-            Name = name;
-            Height = height;
-            Mass = mass;
-            BirthYear = birthYear;
+            Name = person.Name;
+            Height = person.Height;
+            Mass = person.Mass;
+            BirthYear = person.BirthYear;
             Starships = starships ?? new List<string>();
             Species = species ?? new List<string>();
             Homeworld = homeworld;
         }
 
-        // Polymorphic override of DisplayInfo
-        public override string DisplayInfo()
+        // You can add methods like DisplayInfo, etc.
+        public string DisplayInfo()
         {
-            return $"Name: {Name}, Height: {Height}, Mass: {Mass}, Birth Year: {BirthYear}, Homeworld: {Homeworld}, " +
-                   $"Species: {string.Join(", ", Species)}, Starships: {string.Join(", ", Starships)}";
+            return $"{Name} ({BirthYear}) - Height: {Height}, Mass: {Mass}, Species: {string.Join(", ", Species)}";
         }
     }
+
 }
