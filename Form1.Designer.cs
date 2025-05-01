@@ -46,6 +46,10 @@
             this.btnGetSpecies = new System.Windows.Forms.Button();
             this.lblSpecies = new System.Windows.Forms.Label();
             this.lblHomeworld = new System.Windows.Forms.Label();
+            this.btnAddToFavoritesPlanet = new System.Windows.Forms.Button();
+            this.btnAddToFavoritesCharacter = new System.Windows.Forms.Button();
+            this.btnShowFavorites = new System.Windows.Forms.Button();
+            this.lstFavorites = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtPlanetId
@@ -59,7 +63,7 @@
             // 
             this.btnGetPlanet.Location = new System.Drawing.Point(136, 77);
             this.btnGetPlanet.Name = "btnGetPlanet";
-            this.btnGetPlanet.Size = new System.Drawing.Size(75, 23);
+            this.btnGetPlanet.Size = new System.Drawing.Size(90, 23);
             this.btnGetPlanet.TabIndex = 1;
             this.btnGetPlanet.Text = "Get Planet";
             this.btnGetPlanet.UseVisualStyleBackColor = true;
@@ -113,7 +117,7 @@
             // lblBirthYear
             // 
             this.lblBirthYear.AutoSize = true;
-            this.lblBirthYear.Location = new System.Drawing.Point(437, 228);
+            this.lblBirthYear.Location = new System.Drawing.Point(280, 221);
             this.lblBirthYear.Name = "lblBirthYear";
             this.lblBirthYear.Size = new System.Drawing.Size(53, 13);
             this.lblBirthYear.TabIndex = 12;
@@ -122,7 +126,7 @@
             // lblMass
             // 
             this.lblMass.AutoSize = true;
-            this.lblMass.Location = new System.Drawing.Point(437, 197);
+            this.lblMass.Location = new System.Drawing.Point(280, 191);
             this.lblMass.Name = "lblMass";
             this.lblMass.Size = new System.Drawing.Size(32, 13);
             this.lblMass.TabIndex = 11;
@@ -131,7 +135,7 @@
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(437, 165);
+            this.lblHeight.Location = new System.Drawing.Point(280, 153);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(38, 13);
             this.lblHeight.TabIndex = 10;
@@ -140,7 +144,7 @@
             // lblPersonName
             // 
             this.lblPersonName.AutoSize = true;
-            this.lblPersonName.Location = new System.Drawing.Point(437, 131);
+            this.lblPersonName.Location = new System.Drawing.Point(280, 122);
             this.lblPersonName.Name = "lblPersonName";
             this.lblPersonName.Size = new System.Drawing.Size(35, 13);
             this.lblPersonName.TabIndex = 9;
@@ -148,9 +152,9 @@
             // 
             // btnGetPerson
             // 
-            this.btnGetPerson.Location = new System.Drawing.Point(590, 81);
+            this.btnGetPerson.Location = new System.Drawing.Point(398, 79);
             this.btnGetPerson.Name = "btnGetPerson";
-            this.btnGetPerson.Size = new System.Drawing.Size(75, 23);
+            this.btnGetPerson.Size = new System.Drawing.Size(89, 23);
             this.btnGetPerson.TabIndex = 8;
             this.btnGetPerson.Text = "Get Person";
             this.btnGetPerson.UseVisualStyleBackColor = true;
@@ -158,7 +162,7 @@
             // 
             // txtPersonId
             // 
-            this.txtPersonId.Location = new System.Drawing.Point(440, 81);
+            this.txtPersonId.Location = new System.Drawing.Point(283, 79);
             this.txtPersonId.Name = "txtPersonId";
             this.txtPersonId.Size = new System.Drawing.Size(100, 20);
             this.txtPersonId.TabIndex = 7;
@@ -166,7 +170,7 @@
             // lstStarships
             // 
             this.lstStarships.FormattingEnabled = true;
-            this.lstStarships.Location = new System.Drawing.Point(590, 131);
+            this.lstStarships.Location = new System.Drawing.Point(398, 139);
             this.lstStarships.Name = "lstStarships";
             this.lstStarships.Size = new System.Drawing.Size(120, 95);
             this.lstStarships.TabIndex = 13;
@@ -174,7 +178,7 @@
             // lstSpecies
             // 
             this.lstSpecies.FormattingEnabled = true;
-            this.lstSpecies.Location = new System.Drawing.Point(235, 131);
+            this.lstSpecies.Location = new System.Drawing.Point(592, 58);
             this.lstSpecies.Name = "lstSpecies";
             this.lstSpecies.Size = new System.Drawing.Size(196, 108);
             this.lstSpecies.TabIndex = 14;
@@ -182,7 +186,7 @@
             // 
             // btnGetSpecies
             // 
-            this.btnGetSpecies.Location = new System.Drawing.Point(235, 79);
+            this.btnGetSpecies.Location = new System.Drawing.Point(592, 25);
             this.btnGetSpecies.Name = "btnGetSpecies";
             this.btnGetSpecies.Size = new System.Drawing.Size(75, 23);
             this.btnGetSpecies.TabIndex = 15;
@@ -193,7 +197,7 @@
             // lblSpecies
             // 
             this.lblSpecies.AutoSize = true;
-            this.lblSpecies.Location = new System.Drawing.Point(437, 260);
+            this.lblSpecies.Location = new System.Drawing.Point(280, 256);
             this.lblSpecies.Name = "lblSpecies";
             this.lblSpecies.Size = new System.Drawing.Size(45, 13);
             this.lblSpecies.TabIndex = 16;
@@ -202,17 +206,59 @@
             // lblHomeworld
             // 
             this.lblHomeworld.AutoSize = true;
-            this.lblHomeworld.Location = new System.Drawing.Point(437, 288);
+            this.lblHomeworld.Location = new System.Drawing.Point(280, 289);
             this.lblHomeworld.Name = "lblHomeworld";
             this.lblHomeworld.Size = new System.Drawing.Size(60, 13);
             this.lblHomeworld.TabIndex = 17;
             this.lblHomeworld.Text = "Homeworld";
+            // 
+            // btnAddToFavoritesPlanet
+            // 
+            this.btnAddToFavoritesPlanet.Location = new System.Drawing.Point(136, 106);
+            this.btnAddToFavoritesPlanet.Name = "btnAddToFavoritesPlanet";
+            this.btnAddToFavoritesPlanet.Size = new System.Drawing.Size(90, 23);
+            this.btnAddToFavoritesPlanet.TabIndex = 18;
+            this.btnAddToFavoritesPlanet.Text = "Add to Favorite";
+            this.btnAddToFavoritesPlanet.UseVisualStyleBackColor = true;
+            this.btnAddToFavoritesPlanet.Click += new System.EventHandler(this.btnAddToFavoritesPlanet_Click_1);
+            // 
+            // btnAddToFavoritesCharacter
+            // 
+            this.btnAddToFavoritesCharacter.Location = new System.Drawing.Point(398, 108);
+            this.btnAddToFavoritesCharacter.Name = "btnAddToFavoritesCharacter";
+            this.btnAddToFavoritesCharacter.Size = new System.Drawing.Size(89, 23);
+            this.btnAddToFavoritesCharacter.TabIndex = 19;
+            this.btnAddToFavoritesCharacter.Text = "Add to Favorite";
+            this.btnAddToFavoritesCharacter.UseVisualStyleBackColor = true;
+            this.btnAddToFavoritesCharacter.Click += new System.EventHandler(this.btnAddToFavoritesCharacter_Click);
+            // 
+            // btnShowFavorites
+            // 
+            this.btnShowFavorites.Location = new System.Drawing.Point(592, 228);
+            this.btnShowFavorites.Name = "btnShowFavorites";
+            this.btnShowFavorites.Size = new System.Drawing.Size(82, 23);
+            this.btnShowFavorites.TabIndex = 20;
+            this.btnShowFavorites.Text = "ShowFavorites";
+            this.btnShowFavorites.UseVisualStyleBackColor = true;
+            this.btnShowFavorites.Click += new System.EventHandler(this.btnShowFavorites_Click);
+            // 
+            // lstFavorites
+            // 
+            this.lstFavorites.FormattingEnabled = true;
+            this.lstFavorites.Location = new System.Drawing.Point(592, 260);
+            this.lstFavorites.Name = "lstFavorites";
+            this.lstFavorites.Size = new System.Drawing.Size(196, 108);
+            this.lstFavorites.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lstFavorites);
+            this.Controls.Add(this.btnShowFavorites);
+            this.Controls.Add(this.btnAddToFavoritesCharacter);
+            this.Controls.Add(this.btnAddToFavoritesPlanet);
             this.Controls.Add(this.lblHomeworld);
             this.Controls.Add(this.lblSpecies);
             this.Controls.Add(this.btnGetSpecies);
@@ -258,6 +304,10 @@
         private System.Windows.Forms.Button btnGetSpecies;
         private System.Windows.Forms.Label lblSpecies;
         private System.Windows.Forms.Label lblHomeworld;
+        private System.Windows.Forms.Button btnAddToFavoritesPlanet;
+        private System.Windows.Forms.Button btnAddToFavoritesCharacter;
+        private System.Windows.Forms.Button btnShowFavorites;
+        private System.Windows.Forms.ListBox lstFavorites;
     }
 }
 
